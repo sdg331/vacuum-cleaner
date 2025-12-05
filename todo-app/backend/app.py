@@ -5,6 +5,8 @@ from datetime import datetime
 import os
 
 from config import get_database_uri
+from dotenv import load_dotenv
+load_dotenv()
 
 # -------------------------------------------------
 # Flask 앱 및 기본 설정
