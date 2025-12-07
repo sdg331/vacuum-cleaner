@@ -52,8 +52,7 @@ config = {
     "default": DevelopmentConfig
 }
 
-
-def get_config():
-    """현재 환경에 맞는 설정 반환"""
-    env = os.getenv("FLASK_ENV", "development")
-    return config.get(env, config["default"])
+def get_config(env_name=None): 
+    # <-- 인자 추가 """현재 환경에 맞는 설정 반환""" 
+    if env_name is None: env_name = os.getenv("FLASK_ENV", "development") 
+        return config.get(env_name, config["default"])
