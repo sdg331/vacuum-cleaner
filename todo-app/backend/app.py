@@ -360,23 +360,11 @@ def get_todo(todo_id):
     return jsonify(todo.to_dict()), 200
 
 
+# app.py: def update_todo(todo_id) 내부 수정
+
 @app.route("/api/todos/<int:todo_id>", methods=["PUT"])
 def update_todo(todo_id):
-    """
-    [✨ 개선] 특정 할 일 수정 (트랜잭션 안전성 강화)
-    
-    Request Body:
-        {
-            "title": "제목 수정 (선택)",
-            "completed": true (선택)
-        }
-    
-    Response:
-        - 200: 수정 성공
-        - 400: 잘못된 입력값
-        - 404: Todo 없음
-        - 500: 서버 에러
-    """
+    """특정 할 일 수정 (트랜잭션 안전성 강화)"""
     todo = Todo.query.get(todo_id)
     
     if not todo:
@@ -390,14 +378,17 @@ def update_todo(todo_id):
         
         is_valid, error_msg = validate_title(new_title)
         if not is_valid:
-            return jsonify({"error": error_msg}), 400
-        
+            # --- [변경 시작: 400 상태 코드를 명시적으로 반환] ---
+            # 🚨 변경: 제목 검증 실패 시 400 Bad Request 명시적 반환
+            return jsonify({"error": error_msg}), 400 
+            # --- [변경 끝] ---
+            
         todo.title = new_title
-    
+        
     # completed 수정 (선택 사항)
     if "completed" in data:
         todo.completed = bool(data["completed"])
-    
+        
     try:
         db.session.commit()
         return jsonify(todo.to_dict()), 200
