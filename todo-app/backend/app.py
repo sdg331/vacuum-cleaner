@@ -208,11 +208,17 @@ def handle_http_exception(error):
     }), error.code
 
 
+# app.py: @app.errorhandler(Exception) 내부 수정
+
 @app.errorhandler(Exception)
 def handle_unexpected_error(error):
     """예상치 못한 에러 처리"""
     db.session.rollback()
+    
+    # --- [변경 시작: 로거 활성화] ---
+    # 🚨 변경: 주석을 제거하여 Flask Logger를 통해 에러를 기록합니다.
     app.logger.error(f"Unexpected error: {error}")
+    # --- [변경 끝] ---
     
     return jsonify({
         "error": "An unexpected error occurred",
