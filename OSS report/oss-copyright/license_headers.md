@@ -167,5 +167,5 @@
 
 **C (Block Comment)**
 ```
-/* SPDX-License-Identifier: GPL-3.0-or-later */
+// SPDX-License-Identifier: GPL-3.0-or-later //
 ```
