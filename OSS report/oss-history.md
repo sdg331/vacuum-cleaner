@@ -147,20 +147,20 @@ OSI는 어떤 소프트웨어가 진정한 '오픈소스'인지를 판별하는 
  자료를 조사하며 정보를 얻는 것만이 아니라, 앞으로 내가 나아갈 길에 대해서도 생각할 수 있게 되었다. 나는 오픈 소스를 추구할 것인지, 반대할 것인지에 대해서는 확실하게 결정하지 못할 정도로 두쪽의 의견 다 일리가 있는것 같다. 전에는 막연히 당연히 노력해서 만들었는데 나만써야지, 또는 금액을 받아야지 라고만 생각했었다. 그러나 이 과제를 하며 오픈 소스를 주장하는 쪽에 의견에도 설득 당했다. 나는 어떤 길을 가야할지 많이 생각할 수 있어서 좋은 시간 이었다.
 ***
 ## 참고자료
-[2012 공개 소프트웨어 백서](https://www.nipa.kr/home/2-7-1-2/5117) 
+(https://www.nipa.kr/home/2-7-1-2/5117) 
 
-[오픈소스 소프트웨어 통합지원센터](https://www.oss.kr/oss_intro)
+(https://www.oss.kr/oss_intro)
 
-[위키피디아](https://ko.wikipedia.org/wiki/%EC%98%A4%ED%94%88_%EC%86%8C%EC%8A%A4_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4)
-[위키피디아2](https://ko.wikipedia.org/wiki/GNU_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8)
-[디지털 데일리 자료](https://www.ddaily.co.kr/page/view/2014022112024505993)
-[IBM Think](https://www.ibm.com/kr-ko/think/topics/open-source)
+(https://ko.wikipedia.org/wiki/%EC%98%A4%ED%94%88_%EC%86%8C%EC%8A%A4_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4)
+(https://ko.wikipedia.org/wiki/GNU_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8)
+(https://www.ddaily.co.kr/page/view/2014022112024505993)
+(https://www.ibm.com/kr-ko/think/topics/open-source)
 
-[위키독스 박여명 스터디노트](https://wikidocs.net/250637)
-[위키독스](https://wikidocs.net/232255)
+(https://wikidocs.net/250637)
+(https://wikidocs.net/232255)
 
-[티스토리](https://drakon.tistory.com/77)
-[티스토리2](https://12bme.tistory.com/220)
-[티스토리3](https://codingsalon.tistory.com/35)
-[티스토리4](https://jhyngu.tistory.com/120)
+(https://drakon.tistory.com/77)
+(https://12bme.tistory.com/220)
+(https://codingsalon.tistory.com/35)
+(https://jhyngu.tistory.com/120)
 
