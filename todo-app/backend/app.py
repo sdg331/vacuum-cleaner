@@ -458,12 +458,32 @@ def delete_all_todos():
             "error": "Failed to delete todos",
             "detail": str(e)
         }), 500
+# app.py (새로운 헬퍼 함수 추가)
+
+def create_initial_tables(app):
+    """
+    애플리케이션 컨텍스트 내에서 데이터베이스 테이블을 생성합니다.
+    (개발 환경 초기화용)
+    """
+    with app.app_context():
+        db.create_all()
 
 # =========================================
 # 메인 실행
 # =========================================
+# app.py: if __name__ == "__main__": 블록 수정
+
 if __name__ == "__main__":
-    app = create_app() 
-    with app.app_context(): db.create_all() 
-        app.run( host="0.0.0.0", port=5000, 
-                debug=app.config['DEBUG'] # 🚨 [변경] config.py의 DEBUG 값 사용 )
+    app = create_app() # (1단계 커밋에서 변경된 내용)
+    
+    # with app.app_context(): db.create_all() <--- 이 부분을 제거하고 다음 코드로 대체
+    # --- [변경 시작] ---
+    # 🚨 변경: 헬퍼 함수 호출로 대체
+    create_initial_tables(app)
+    # --- [변경 끝] ---
+    
+    app.run(
+        host="0.0.0.0",
+        port=5000,
+        debug=app.config['DEBUG']
+    )
