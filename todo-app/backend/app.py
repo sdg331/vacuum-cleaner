@@ -25,20 +25,10 @@ load_dotenv()
 # =========================================
 app = Flask(__name__)
 
-# 환경변수에서 DB 접속 정보 읽기
-DB_USER = os.getenv("DB_USER", "todo_user")
-DB_PASSWORD = os.getenv("DB_PASSWORD", "todo_password")
-DB_HOST = os.getenv("DB_HOST", "localhost")
-DB_PORT = os.getenv("DB_PORT", "3306")
-DB_NAME = os.getenv("DB_NAME", "todo_db")
+from config import get_config
 
-# SQLAlchemy 설정
-app.config["SQLALCHEMY_DATABASE_URI"] = (
-    f"mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
-    "?charset=utf8mb4"  # 이모지 지원 (✨🎉 등)
-)
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-app.config["JSON_AS_ASCII"] = False  # 한글 깨짐 방지
+# config.py의 설정을 로드합니다.
+app.config.from_object(get_config())
 
 # CORS 설정 (개발용: 전체 허용)
 CORS(app, resources={r"/api/*": {"origins": "*"}})
