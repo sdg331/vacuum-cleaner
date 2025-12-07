@@ -1,3 +1,4 @@
+[models.py내용 업데이트함]
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
