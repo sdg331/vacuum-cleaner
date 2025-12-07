@@ -438,6 +438,8 @@ def delete_todo(todo_id):
         }), 500
 
 
+# app.py: @app.route("/api/todos", methods=["DELETE"]) 내부 수정
+
 @app.route("/api/todos", methods=["DELETE"])
 def delete_all_todos():
     """
@@ -448,10 +450,10 @@ def delete_all_todos():
         deleted_count = Todo.query.delete()
         db.session.commit()
         
-        return jsonify({
-            "deleted": deleted_count,
-            "message": f"{deleted_count} todo(s) deleted"
-        }), 200
+        # --- [변경 시작: 204 응답으로 변경] ---
+        # 🚨 변경: 삭제 성공 시 응답 본문 없이 204 No Content를 반환합니다.
+        return "", 204 
+        # --- [변경 끝] ---
         
     except Exception as e:
         db.session.rollback()
@@ -459,7 +461,6 @@ def delete_all_todos():
             "error": "Failed to delete todos",
             "detail": str(e)
         }), 500
-
 
 # =========================================
 # 메인 실행
