@@ -466,8 +466,7 @@ def delete_all_todos():
 # 메인 실행
 # =========================================
 if __name__ == "__main__":
-    app.run(
-        host="0.0.0.0",
-        port=5000,
-        debug=True  # 프로덕션에서는 False
-    )
+    app = create_app() 
+    with app.app_context(): db.create_all() 
+        app.run( host="0.0.0.0", port=5000, 
+                debug=app.config['DEBUG'] # 🚨 [변경] config.py의 DEBUG 값 사용 )
